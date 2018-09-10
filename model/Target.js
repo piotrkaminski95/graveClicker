@@ -26,7 +26,9 @@ export class Target {
     }
     
     getHit(power) {
-        this.hp--;
+        if (!this.isDiged) {
+            this.hp = hp - power;            
+        }
     }
     
     isDiged() {
