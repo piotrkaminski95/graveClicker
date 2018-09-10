@@ -1,23 +1,23 @@
 export class TargetView {
     
-    constructor(controller, target) {
+    constructor(controller) {
         this.controller = controller;
-        this.element = createElement(target);
-        this.registerEventListners();
+        this.element = this.createElement();
+        this.registerEventListeners();
     }
     
-    render(target) {
+    render() {
         return `<div class="target">
-                    <img src="${target.targetImg}" alt="grave" id="graveImg">
+                    <img src="${this.controller.target.getTargetImg()}" alt="grave" id="graveImg">
                     <div class="lifeBar" style="border: red 2px solid">
-                        <div class="lifeValue" value="${target.hp}" style="height: 24px; width: 100%; background-color: red"></div>
+                        <div class="lifeValue" value="${this.controller.target.hp}" style="height: 24px; width: 100%; background-color: red"></div>
                     </div>
                 </div>`;
     }
     
-    createElement(target) {
+    createElement() {
         let elem = document.createElement("template");
-        elem.innerHTML = this.render(target);
+        elem.innerHTML = this.render();
         return elem.content.firstChild;
     }
     

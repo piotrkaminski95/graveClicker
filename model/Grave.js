@@ -1,13 +1,13 @@
 export class Grave {
     
     constructor() {
-        this.name;
-        this.img;
+        this._name;
+        this._img;
     }
     
-    constructor(name, imgSrc) {
-        this.name = name;
-        this.img = imgSrc;
+    setNameAndImage(name, imgSrc) {
+        this._name = name;
+        this._img = imgSrc;
     }
     
     static createFromObj(obj) {
@@ -17,10 +17,10 @@ export class Grave {
     }
     
     get name() {
-        return this.name;
+        return this._name;
     }
     
     get img() {
-        return this.img;
+        return this._img;
     }
 }

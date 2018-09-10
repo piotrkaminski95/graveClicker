@@ -1,37 +1,47 @@
 export class Target {
     
     constructor() {
-        this.hp;
-        this.grave;
+        this._hp;
+        this._grave;
     }
     
     set grave(grave) {
-        this.grave = grave;
+        this._grave = grave;
     }
     
-    get targetImg() {
-        return this.grave.img;
+    getTargetImg() {
+        return this._grave.img;
     }
     
-    get targetName() {
-        return this.grave.name;
+    getTargetName() {
+        return this._grave.name;
     }
     
     set hp(hp) {
-        this.hp = hp;
+        this._hp = hp;
     }
     
     get hp() {
-        return this.hp;
+        return this._hp;
     }
     
     getHit(power) {
-        if (!this.isDiged) {
-            this.hp = hp - power;            
+        if (this.isDiged() !== true) {
+            console.log("target hp - " + power);
+            this._hp = this._hp - power;            
+            console.log("target hp: " + this._hp);
+        } else {
+            console.log("target dead!!!")
+    
         }
     }
     
     isDiged() {
-        return hp <= 0;
+        console.log("chacking if is smaller");
+        if (this._hp <= 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
