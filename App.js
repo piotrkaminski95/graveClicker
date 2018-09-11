@@ -6,11 +6,18 @@ import {Grave} from "./model/Grave.js";
 import {Target} from "./model/Target.js";
 import {GamePanelView} from "./model/GamePanelView.js"
 import {GamePanelController} from "./model/GamePanelController.js";
+import {ItemController} from "./model/ItemController.js";
+import {ItemView} from "./model/ItemView.js";
 
 let gameController = new GamePanelController();
 let gamePanelView = new GamePanelView(gameController);
-let panelGame = document.getElementsByClassName("panel-game")[0];
+let panelGame = document.getElementsByClassName("main")[0];
 panelGame.appendChild(gamePanelView.element);
+
+let itemController = new ItemController();
+let itemView = new ItemView(itemController);
+let items = document.getElementsByClassName("panel-game")[0];
+items.appendChild(itemView.element);
 
 let grave = new Grave();
 grave.setNameAndImage("testGrave", "./img/square.png");
