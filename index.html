@@ -12,12 +12,31 @@
             Grave Clicker
         </header>
 
-        
-
         <div class="panel">
-            <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">Companions</button>
-            <button class="tablink" onclick="openCity('Paris', this, 'green')">Perks</button>
-            <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Something</button>
+                <button class="tablink" onclick="openContent('Companions', this, 'CompanionList')" id="defaultOpen">Companions</button>
+                <button class="tablink" onclick="openContent('Shop', this, 'ShopList')">Shop</button>
+                <button class="tablink" onclick="openContent('Inventory', this, 'Inventory')">Inventory</button>
+                <button class="tablink" onclick="openContent('Perks', this, 'PerksList')">Perks</button>    
+            <div id="Companions" class="tabcontent">
+                <h3>Companions</h3>
+                <p>Your SideKick</p>
+                </div>
+                
+                <div id="Shop" class="tabcontent">
+                <h3>Shop</h3>
+                <p>Items to buy</p> 
+                </div>
+                
+                <div id="Inventory" class="tabcontent">
+                <h3>Inventory</h3>
+                <p>Your Items</p>
+                </div>
+                
+                <div id="Perks" class="tabcontent">
+                <h3>Perks</h3>
+                <p>Your perks</p>
+                </div>
+
         </div>
         <div class="board">
             <div class="target-grave">
@@ -28,6 +47,22 @@
 
 
     </div>
-
+    <script>
+        function openContent(name,list) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(name).style.display = "block";
+        
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
 </body>
 </html>

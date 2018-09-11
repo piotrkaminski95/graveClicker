@@ -59,18 +59,9 @@ table {
    
     grid-template-areas: 
     "header header"
-    "container container"
-    
-}
-
-.container{
-    display:grid;
-    grid-area: container;
-    
-    grid-template-columns: 4fr 5fr;
-    grid-template-areas: 
     "panel board"
-
+    "panel board"
+    
 }
 
 header {
@@ -92,6 +83,9 @@ header {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
+
+/* ///////// GAME PANEL ////// */
+
 .tablink {
     background-color: #555;
     color: white;
@@ -108,7 +102,6 @@ header {
     background-color: #777;
 }
 
-/* Style the tab content */
 .tabcontent {
     color: white;
     display: none;
