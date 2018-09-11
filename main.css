@@ -48,16 +48,18 @@ table {
 
 .main {
     background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-attachment: local;
+     background-position: center;
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
     display: grid;
-    border-style: solid;
     width: 100vw;
     height: 100vh;
-    grid-template-rows: 3fr 21fr 1fr;
    
     grid-template-areas: 
     "header header"
     "container container"
-    "footer footer"
     
 }
 
@@ -65,7 +67,7 @@ table {
     display:grid;
     grid-area: container;
     
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 4fr 5fr;
     grid-template-areas: 
     "panel board"
 
@@ -113,11 +115,6 @@ header {
     padding: 50px;
     text-align: center;
 }
-
-#London {background-color:red;}
-#Paris {background-color:green;}
-#Tokyo {background-color:blue;}
-#Oslo {background-color:orange;}
 
 .target-grave > .main{
     grid-column-start: 3;
