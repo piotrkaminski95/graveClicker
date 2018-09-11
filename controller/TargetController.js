@@ -6,8 +6,8 @@ import {TargetView} from "../view/TargetView.js"
 export class TargetController {
     
     constructor(target) {
+        this.cementary = new cementary();
         this._target = target;
-        this._counter = 1;
     }
     
     get target() {
@@ -19,33 +19,49 @@ export class TargetController {
     }
     
     handleClick(e) {
-        let lifeBar = document.getElementsByClassName("lifeValue")[0];
+        console.log(this._target.hp + "/" + this.target.fullHp);
         this._target.getHit(1);
-        let hpLeft = this.countHpPercent(this.target.hp, parseInt(lifeBar.getAttribute("value")));
-        console.log("" + hpLeft);
-        lifeBar.setAttribute("style", "height: 24px; width: " + hpLeft + "%; background-color: red;");
-        console.log("hit-" + hpLeft);
+        let hpLeft = this.target.countHpPercent();
+        console.log(hpLeft + "% left");
+        this.target.changeTargetImg();
         if (this._target.isDiged()) {
             console.log("change target")
             this.changeTarget();
+        } else {
+            this.target.notifyAll();
         }
     }
     
-    changeTargetImg(img) {
-        
-    }
-    
     changeTarget() {
-        this._counter++;
-        let grave = new Grave();
-        grave.setNameAndImage("testTarget" + this._counter, "./img/square2.png");
-        this._target.grave = grave;
-        this._target.hp = 10;
+        this._target.grave = this.cementary.next();
+        this._target.fullHp = 10;
         this._target.notifyAll();
     }
+}
+
+export class cementary {
+    constructor() {
+        this.index = 6;
+        this.graveyard = [];
+        this.addGraves();
+    }
     
-    countHpPercent(hp, fullHp) {
-        console.log("" + (fullHp / hp))
-        return (hp / fullHp).toFixed(2) * 100;
+    addGraves() {
+        for (let i = 1; i < 5; i++) {
+            this.graveyard.push(Grave.createGrave("testGrave" + i, this.getImgs()));
+        }
+    }
+    
+    next() {
+        if (this.index >= this.graveyard.length) {this.index = 0;}
+        return this.graveyard[this.index++];
+    }
+    
+    getImgs() {
+        let arr = [];
+        for (let i = 1; i <= 4; i++) {
+            arr.push("./img/square" + i + ".png");
+        }
+        return arr;
     }
 }

@@ -5,12 +5,9 @@ import {TargetController} from "./controller/TargetController.js";
 import {Grave} from "./model/Grave.js";
 import {Target} from "./model/Target.js";
 
-let grave = new Grave();
-grave.setNameAndImage("testGrave", "./img/square.png");
-
 let target = new Target();
-target.hp = 10;
-target.grave = grave;
+target.fullHp = 0;
+target.grave = Grave.createGrave("click grave to start", []);
 
 let tController = new TargetController(target);
 let tView = new TargetView(tController);

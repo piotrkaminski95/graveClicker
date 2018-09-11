@@ -1,21 +1,36 @@
 export class Target {
     
     constructor() {
+        this._fullHp;
         this._hp;
         this._grave;
         this.observers = [];
+        
     }
     
     set grave(grave) {
         this._grave = grave;
     }
     
-    getTargetImg() {
+    get grave() {
+        return this._grave;
+    }
+    
+    get targetImg() {
         return this._grave.img;
     }
     
-    getTargetName() {
+    get targetName() {
         return this._grave.name;
+    }
+
+    set fullHp(hp) {
+        this._hp = hp;
+        this._fullHp = hp;
+    }
+    
+    get fullHp() {
+        return this._fullHp;
     }
     
     set hp(hp) {
@@ -28,12 +43,9 @@ export class Target {
     
     getHit(power) {
         if (this.isDiged() !== true) {
-            console.log("target hp - " + power);
             this._hp = this._hp - power;            
-            console.log("target hp: " + this._hp);
         } else {
             console.log("target dead!!!")
-    
         }
     }
     
@@ -43,6 +55,28 @@ export class Target {
         } else {
             return false;
         }
+    }
+    
+    changeTargetImg() {
+        let hPercent = this.countHpPercent();
+        
+        if (hPercent < 75) {
+            if (hPercent < 50) {
+                if (hPercent < 25) {
+                    this.grave._imgIndex = 0;
+                } else {
+                    this.grave._imgIndex = 3;
+                }
+            } else {
+                this.grave._imgIndex = 2;
+            }
+        } else {
+            this.grave._imgIndex = 1;
+        }
+    }
+
+    countHpPercent() {
+        return (this._hp / this._fullHp).toFixed(2) * 100;
     }
     
     subscribe(observer) {
