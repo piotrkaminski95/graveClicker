@@ -6,7 +6,7 @@ export class GamePanelView{
     }
 
     render(){
-        return `<div><button class="tablink">Companions</button>
+        return `<div class="panel-game"><button class="tablink">Companions</button>
                     <button class="tablink">Shop</button>
                     <button class="tablink">Inventory</button> 
                     <button class="tablink">Passives</button></div>`;
@@ -18,9 +18,8 @@ export class GamePanelView{
         return elem.content.firstChild;
     }
 
-
-    //TO DO, add items as parametr;
     registerEventListeners() {
-        this.element.getElementsByClassName('tablink')[0].addEventListener('onclick', this.controller.openContent.bind("sss"));
+        for(let i = 0; i < this.element.getElementsByClassName('tablink').length; i ++)
+            this.element.getElementsByClassName('tablink')[i].addEventListener('onclick', this.controller.openContent.bind(this.controller));
     }
 }
