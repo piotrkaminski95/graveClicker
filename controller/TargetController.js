@@ -31,17 +31,21 @@ export class TargetController {
         }
     }
     
+    changeTargetImg(img) {
+        
+    }
+    
     changeTarget() {
         this._counter++;
         let grave = new Grave();
-        grave.setNameAndImage("testTarget" + this._counter, "./img/square2");
+        grave.setNameAndImage("testTarget" + this._counter, "./img/square2.png");
         this._target.grave = grave;
-        this._target.hp = 100;
-        TargetView.updateTarget(this.target);
+        this._target.hp = 10;
+        this._target.notifyAll();
     }
     
     countHpPercent(hp, fullHp) {
         console.log("" + (fullHp / hp))
-        return ((fullHp * hp) / 100).toFixed(2) * 100;
+        return (hp / fullHp).toFixed(2) * 100;
     }
 }
