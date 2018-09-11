@@ -119,9 +119,9 @@ header {
 #Tokyo {background-color:blue;}
 #Oslo {background-color:orange;}
 
-.game-board {
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 4;
+.target-grave > .main{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
 }
