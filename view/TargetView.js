@@ -8,7 +8,8 @@ export class TargetView {
     
     render() {
         return `<div class="target">
-                    <img src="${this.controller.target.getTargetImg()}" alt="grave" id="graveImg">
+                    <p id="targetName">${this.controller.target.getTargetName()}</p>
+                    <img src="${this.controller.target.getTargetImg()}" alt="grave" id="graveImg" style="height: 50px">
                     <div class="lifeBar" style="border: red 2px solid">
                         <div class="lifeValue" value="${this.controller.target.hp}" style="height: 24px; width: 100%; background-color: red"></div>
                     </div>
@@ -22,6 +23,12 @@ export class TargetView {
     }
     
     registerEventListeners() {
-        this.element.addEventListener('click', this.controller.handleClick.bind(this.controller));
+        this.element.getElementsByTagName("img")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
+    }
+    
+    update() {
+        this.element.getElementById("targetName").nodeValue = this.controller.target.getTargetName();
+        this.element.getElementsByTagName("img")[0].setAttribute("src", this.controller.target.getTargetImg);
+        this.element.getElementsByClassName("lifeValue")[0].setAttribute("value", this.controller.target.hp);
     }
 }

@@ -3,6 +3,7 @@ export class Target {
     constructor() {
         this._hp;
         this._grave;
+        this.observers = [];
     }
     
     set grave(grave) {
@@ -37,11 +38,14 @@ export class Target {
     }
     
     isDiged() {
-        console.log("chacking if is smaller");
         if (this._hp <= 0) {
             return true;
         } else {
             return false;
         }
+    }
+    
+    subscribe(observer) {
+        this.observers.push(observer);
     }
 }

@@ -1,7 +1,13 @@
+import {Target} from "../model/Target.js";
+import {Grave} from "../model/Grave.js";
+import {TargetView} from "../view/TargetView.js"
+
+
 export class TargetController {
     
     constructor(target) {
         this._target = target;
+        this._counter = 1;
     }
     
     get target() {
@@ -19,6 +25,19 @@ export class TargetController {
         console.log("" + hpLeft);
         lifeBar.setAttribute("style", "height: 24px; width: " + hpLeft + "%; background-color: red;");
         console.log("hit-" + hpLeft);
+        if (this._target.isDiged()) {
+            console.log("change target")
+            this.changeTarget();
+        }
+    }
+    
+    changeTarget() {
+        this._counter++;
+        let grave = new Grave();
+        grave.setNameAndImage("testTarget" + this._counter, "./img/square2");
+        this._target.grave = grave;
+        this._target.hp = 100;
+        TargetView.updateTarget(this.target);
     }
     
     countHpPercent(hp, fullHp) {
