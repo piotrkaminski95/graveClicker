@@ -1,24 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device.width, initial-scale=1">
-        <title>Test graveClicker</title>
-    </head>
+<html>
+<head>
+    <title>Grave Clicker</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
-    <body>
-        
-        <div class="main">
-        
-            <div class="conteiner">
-                
-                <div class="target">
+</head>
+<body>
+
+    <div class="main">
+        <header>
+            Grave Clicker
+        </header>
+
+        <div class="panel-game">
+                <button class="tablink" onclick="openContent('Companions','CompanionList')" id="defaultOpen">Companions</button>
+                <button class="tablink" onclick="openContent('Shop', 'ShopList')">Shop</button>
+                <button class="tablink" onclick="openContent('Inventory', 'Inventory')">Inventory</button>
+                <button class="tablink" onclick="openContent('Perks', 'PerksList')">Perks</button>    
+            <div id="Companions" class="tabcontent">
+                <h3>Companions</h3>
+                <p>Your SideKick</p>
                 </div>
-            
-            </div>
-        
+                
+                <div id="Shop" class="tabcontent">
+                <h3>Shop</h3>
+                <p>Items to buy</p> 
+                </div>
+                
+                <div id="Inventory" class="tabcontent">
+                <h3>Inventory</h3>
+                <p>Your Items</p>
+                </div>
+                
+                <div id="Perks" class="tabcontent">
+                <h3>Perks</h3>
+                <p>Your perks</p>
+                </div>
+
         </div>
+        <div class="board">
+            <div class="target-grave">
+                <img src="grave-full.png">
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        function openContent(name) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(name).style.display = "block";
+        
+        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        </script>
         
         <script src="App.js" type="module"></script>
-    </body>
+</body>
 </html>
