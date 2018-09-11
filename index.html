@@ -14,30 +14,26 @@
         </header>
 
         <div class="panel-game">
-                <button class="tablink" onclick="openContent('Companions','CompanionList')" id="defaultOpen">Companions</button>
-                <button class="tablink" onclick="openContent('Shop', 'ShopList')">Shop</button>
-                <button class="tablink" onclick="openContent('Inventory', 'Inventory')">Inventory</button>
-                <button class="tablink" onclick="openContent('Perks', 'PerksList')">Perks</button>    
-            <div id="Companions" class="tabcontent">
-                <h3>Companions</h3>
-                <p>Your SideKick</p>
-                </div>
-                
-                <div id="Shop" class="tabcontent">
-                <h3>Shop</h3>
-                <p>Items to buy</p> 
-                </div>
-                
-                <div id="Inventory" class="tabcontent">
-                <h3>Inventory</h3>
-                <p>Your Items</p>
-                </div>
-                
-                <div id="Perks" class="tabcontent">
-                <h3>Perks</h3>
-                <p>Your perks</p>
-                </div>
 
+            <div id="Item" class="tabcontent">
+                <h3>Home</h3>
+                <p>Home is where the heart is..</p>
+              </div>
+              
+              <div id="News" class="tabcontent">
+                <h3>News</h3>
+                <p>Some news this fine day!</p> 
+              </div>
+              
+              <div id="Contact" class="tabcontent">
+                <h3>Contact</h3>
+                <p>Get in touch, or swing by for a cup of coffee.</p>
+              </div>
+              
+              <div id="About" class="tabcontent">
+                <h3>About</h3>
+                <p>Who we are and what we do.</p>
+              </div>
         </div>
         <div class="board">
             <div class="target-grave">
@@ -45,27 +41,8 @@
             </div>
 
         </div>
+    </div>   
 
-
-    </div>
-    <script>
-        function openContent(name) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablink");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].style.backgroundColor = "";
-            }
-            document.getElementById(name).style.display = "block";
-        
-        }
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-        </script>
-        
-        <script src="App.js" type="module"></script>
+    <script src="App.js" type="module"></script>
 </body>
 </html>
