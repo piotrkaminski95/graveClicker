@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Grave Clicker</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
 
-    <div class="main">
-        <header>
-            Grave Clicker
-        </header>
+    <head>
+        <title>Grave Clicker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        
-
-        <div class="panel">
-            <button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">Companions</button>
-            <button class="tablink" onclick="openCity('Paris', this, 'green')">Perks</button>
-            <button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Something</button>
-        </div>
-        <div class="board">
-            <div class="target-grave">
-                <img src="grave-full.png">
+        <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+                
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="site">
+            
+            
+            <header class = "header">
+                <h1>Grave Clicker</h1> 
+            </header>
+            <div class="panel">
+                <div class = "transparent-border">
+                    <button class="tablink1 btn"  id="defaultOpen">Companions</button>
+                    <button class="tablink2 btn" >Shop</button>
+                    <button class="tablink3 btn" >Inventory</button>
+                    <button class="tablink4 btn" >Perks</button>
+                    
+                    <div class= "panelContent" id="content">
+                        
+                    </div>
+                </div>
             </div>
-
+            <div class="score">
+                <p>$101110.23k</p>
+            </div>
+            <div class="board">
+                <span class="target-gravestone" id="gravestone">
+                    <img src="gravestone.png">
+                </span>
+                <span class="target-grave" id="target">
+                    <img src="grave-full.png">
+                </span>
+            </div>
         </div>
-
-
-    </div>
-
-</body>
+    </body>
 </html>
