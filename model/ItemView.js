@@ -6,9 +6,9 @@ export class ItemView{
     }
 
     render(){
-        return `<div class="tabcontent" id="companions">
-        ddd
-      </div>
+        return `<div class= "panelContent" id="companions">
+                     dfsdfsdf   
+                    </div>
         `
     }
     createElement() {

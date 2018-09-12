@@ -11,7 +11,7 @@ import {ItemView} from "./model/ItemView.js";
 
 let gameController = new GamePanelController();
 let gamePanelView = new GamePanelView(gameController);
-let panelGame = document.getElementsByClassName("main")[0];
+let panelGame = document.getElementsByClassName("panel")[0];
 panelGame.appendChild(gamePanelView.element);
 
 let itemController = new ItemController();
