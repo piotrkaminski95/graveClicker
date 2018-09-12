@@ -3,7 +3,8 @@ export class GamePanelController {
     constructor(){
     }
 
-    openContent(name) {
+    openContent(e) {
+        let name = e.target.name;
         let i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
