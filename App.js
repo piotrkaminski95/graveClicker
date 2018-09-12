@@ -14,10 +14,10 @@ let gamePanelView = new GamePanelView(gameController);
 let panelGame = document.getElementsByClassName("panel")[0];
 panelGame.appendChild(gamePanelView.element);
 
-let itemController = new ItemController();
-let itemView = new ItemView(itemController);
-let items = document.getElementsByClassName("panel-game")[0];
-items.appendChild(itemView.element);
+//let itemController = new ItemController();
+//let itemView = new ItemView(itemController);
+//let items = document.getElementsByClassName("panel-game")[0];
+//items.appendChild(itemView.element);
 
 let target = new Target();
 target.fullHp = 0;
@@ -26,6 +26,6 @@ target.grave = Grave.createGrave("click grave to start", []);
 let tController = new TargetController(target);
 let tView = new TargetView(tController);
 
-let graveyard = document.getElementsByClassName("target")[0];
+let graveyard = document.getElementsByClassName("site")[0];
 
-// graveyard.appendChild(tView.element);
+graveyard.appendChild(tView.element);
