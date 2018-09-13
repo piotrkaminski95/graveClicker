@@ -13,8 +13,10 @@ import {storage} from "./storage/Storage.js";
 import {CoinView} from "./view/CoinView.js";
 import {Coin} from "./model/Coin.js";
 import {MathemathicHelper} from "../model/MathemathicHelper.js";
+import {timer} from "./model/Timer.js";
+// UNCOMMENT THIS TO START TIMER
+//import {timerObservator} from "./model/Observator.js";
 
-console.log(MathemathicHelper.shortFormatNumber(1100000000));
 localStorage.clear;
 let gameController = new GamePanelController();
 let gamePanelView = new GamePanelView(gameController);
@@ -43,3 +45,6 @@ let tView = new TargetView(tController);
 let graveyard = document.getElementsByClassName("site")[0];
 
 graveyard.appendChild(tView.element);
+
+// UNCOMMENT THIS TO START TIMER
+//timerObservator.subscribe(tController);

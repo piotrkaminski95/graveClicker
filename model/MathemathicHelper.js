@@ -26,7 +26,6 @@ export class MathemathicHelper {
             
             power += 3;
             next3power = Math.pow(base, power);
-            console.log(Math.pow(base, power) + " next base");
             
             if (num < next3power) {
                 return "$ " + `${(num / Math.pow(base, power - 3)).toFixed(1).replace(/\.0+$/, '')}${suffix[i]}`;
