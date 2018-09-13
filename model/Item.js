@@ -7,8 +7,10 @@ export class Item {
         this._name = null;
         this._cost = null;
         this._currentBonus = null;
-        this._lvl = 0;
+        this._lvl = 1;
         this._previousBonus = 0;
+        this._startCost = null;
+        this._startBonus = null;
     }
 
     static createFromObject(obj){
@@ -19,6 +21,14 @@ export class Item {
 
     get previousBonus() {
         return this._previousBonus;
+    }
+
+    get startCost() {
+        return this._startCost;
+    }
+
+    get startBonus(){
+        return this._startBonus;
     }
 
     get type() {
@@ -73,17 +83,23 @@ export class Item {
         this._lvl = value;
     }
 
+    set startCost(value) {
+        this._startCost = value;
+    }
+
+    set startBonus(value) {
+        this._startBonus = value;
+    }
+
     lvlUp(){
         this._lvl++;
     }
 
     costGrow(){
-        this._cost = MathemathicHelper.costGrowUp(this._cost, this._lvl);
-        console.log(this._cost);
+        this._cost = MathemathicHelper.costGrowUp(this._startCost, this._lvl);
     }
 
     atkGrow(){
-        this._currentBonus = MathemathicHelper.bonusGrowUp(this._currentBonus, this._lvl);
-        console.log(this._currentBonus);
+        this._currentBonus = MathemathicHelper.bonusGrowUp(this._startBonus, this._lvl);
     }
 }

@@ -17,10 +17,6 @@ class Character {
         return this._coins;
     }
 
-    get weapon() {
-        return this._weapon;
-    }
-
     set name(value) {
         this._name = value;
     }

@@ -1,13 +1,20 @@
 export class MathemathicHelper {
-
-    static costGrowUp(level, cost){
+    
+    static costGrowUp(level, startValue){
         
-        let exponent = 1.5
-        return Math.floor(cost * Math.pow(level,exponent))
+        let q = 2.8;
+        console.log(level + " level");
+        console.log(startValue + " startValue");
+        console.log((startValue * Math.pow(q, (level+1))) + " cost");
+        return Math.round(startValue * Math.pow(q, (level+1)));
     }
 
-    static bonusGrowUp(){
-        
+    static bonusGrowUp(level, startValue){
+        let q = 1.3;
+        // console.log(level + " level");
+        // console.log(startValue + " startValue");
+        // console.log((startValue * Math.pow(q, (level-1))) + " bonius");
+        return Math.round(startValue * Math.pow(q, (level+1)));
     }
 
 }
