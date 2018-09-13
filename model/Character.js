@@ -1,7 +1,9 @@
+import {coinObservator} from "../model/Observator.js";
+
 class Character {
     constructor() {
         this._name = "Player";
-        this._coins = 50;
+        this._coins = 0;
         this._atk = 4;
     }
 
@@ -31,6 +33,8 @@ class Character {
 
     set coins(value) {
         this._coins = value;
+        coinObservator.notifyAll("");
+        console.log("coins added");
     }
 }
 export let character = new Character();

@@ -2,8 +2,8 @@ export class MathemathicHelper {
 
     static costGrowUp(XP){
         let constA = 8.7;
-        constB = -40;
-        constC = 111;
+        let constB = -40;
+        let constC = 111;
         return Math.max( Math.floor( constA * Math.log( XP + constC ) + constB ), 1 )
     }
     
@@ -11,4 +11,7 @@ export class MathemathicHelper {
         return (hp / fullHp).toFixed(2) * 100;
     }
 
+    static countPercent(num, percent) {
+        return (num/100) * percent;
+    }
 }

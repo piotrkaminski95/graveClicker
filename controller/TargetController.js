@@ -38,7 +38,7 @@ export class TargetController {
     
     changeTarget() {
         this._target.grave = this.cementary.next();
-        this._target.fullHp = Target.BASE_HP * this._target.level;
+        this._target.fullHp = Target.BASE_HP * this.target.level;
         targetObservator.notifyAll({status:"digged", target:this._target});
     }
 }
