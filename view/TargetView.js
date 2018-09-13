@@ -32,7 +32,7 @@ export class TargetView {
         this.element.getElementsByClassName("target-grave")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
     }
     
-    update() {
+    update(data) {
         console.log(this.controller.target.targetName + "  " + this.controller.target.targetImg);
         let elem = document.getElementsByClassName("board")[0];
         console.log(elem);

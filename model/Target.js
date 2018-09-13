@@ -4,8 +4,17 @@ export class Target {
         this._fullHp;
         this._hp;
         this._grave;
+        this._level = 1;
         this.observers = [];
         
+    }
+    
+    static get BASE_HP() {
+        return 10;
+    }
+    
+    get level() {
+        return this._level;
     }
     
     set grave(grave) {
@@ -71,8 +80,13 @@ export class Target {
         }
     }
 
+    // extreact to mathHelper
     countHpPercent() {
         return (this._hp / this._fullHp).toFixed(2) * 100;
+    }
+    
+    levelUp() {
+        this._level++;
     }
     
     subscribe(observer) {
@@ -86,9 +100,9 @@ export class Target {
         }
     }
     
-    notifyAll() {
+    notifyAll(status) {
         for (let obs of this.observers) {
-            obs.update();
+            obs.update(status);
         }
     }
 }

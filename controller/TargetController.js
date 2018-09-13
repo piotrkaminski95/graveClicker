@@ -29,13 +29,13 @@ export class TargetController {
             console.log("change target")
             this.changeTarget();
         } else {
-            this.target.notifyAll();
+            this.target.notifyAll({status:"hit", target:this._target});
         }
     }
     
     changeTarget() {
         this._target.grave = this.cementary.next();
-        this._target.fullHp = 10;
-        this._target.notifyAll();
+        this._target.fullHp = Target.BASE_HP * this._target.level;
+        this._target.notifyAll({status:"digged", target:this._target});
     }
 }
