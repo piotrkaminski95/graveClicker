@@ -30,7 +30,6 @@ export class TargetView {
     }
     
     registerEventListeners() {
-        console.log(this.element);
         this.element.getElementsByClassName("target-grave")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
     }
     
