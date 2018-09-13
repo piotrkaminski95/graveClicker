@@ -6,7 +6,7 @@ import {itemObservator} from "../model/Observator.js";
 
 export class ItemController{
     constructor(item){
-        this._item = item;
+        this.item = item;
         storage.add(this.item);
     }
 
@@ -22,8 +22,9 @@ export class ItemController{
         if(character.coins > this.item.cost){
             
             character.coins -= this.item.cost;
-            character.atk += this.item.cost - this.item.previousBonus;
+            character.atk += (this.item.currentBonus - this.item.previousBonus);
             this.item.previousBonus = this.item.currentBonus;
+            
             this.item.lvlUp();
             this.item.costGrow();
             this.item.atkGrow();

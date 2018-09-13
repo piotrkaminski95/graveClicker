@@ -1,7 +1,7 @@
 class Character {
     constructor() {
         this._name = "Player";
-        this._coins = 50;
+        this._coins = 5000;
         this._atk = 4;
     }
 

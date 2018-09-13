@@ -1,4 +1,4 @@
-import {MathemathicHelper} from "./MathemathicHelper";
+import {MathemathicHelper} from "./MathemathicHelper.js";
 
 export class Item {
     constructor(){
@@ -45,6 +45,10 @@ export class Item {
         return this._lvl;
     }
 
+    set currentBonus(value) {
+        this._currentBonus = value;
+    }
+
     set previousBonus(value) {
         this._previousBonus = value;
     }
@@ -65,10 +69,6 @@ export class Item {
         this._cost = value;
     }
 
-    set currentBonus(value) {
-        this._currentBonus = value;
-    }
-
     set lvl(value){
         this._lvl = value;
     }
@@ -78,12 +78,12 @@ export class Item {
     }
 
     costGrow(){
-        this.cost = MathemathicHelper.costGrowUp(cost);
-        console.log(cost);
+        this._cost = MathemathicHelper.costGrowUp(this._cost, this._lvl);
+        console.log(this._cost);
     }
 
     atkGrow(){
-        this.currentBonus = MathemathicHelper.costGrowUp(this.currentBonus);
-        cosnole.log(this.currentBonus);
+        this._currentBonus = MathemathicHelper.bonusGrowUp(this._currentBonus, this._lvl);
+        console.log(this._currentBonus);
     }
 }

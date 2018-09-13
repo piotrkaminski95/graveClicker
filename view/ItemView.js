@@ -13,6 +13,7 @@ export class ItemView{
         return `<div class="tabcontent ${this.controller.item.type}" id=${this.controller.item.id}>
          <p><hr />${this.controller.item.name} 
         LVL: ${this.controller.item.lvl}  
+        ATK BONUS: ${this.controller.item.currentBonus}
         COST: ${this.controller.item.cost}
         <button class="btn buy">buyme</button> <hr /></p></div>
         `
@@ -34,6 +35,7 @@ export class ItemView{
         element.innerHTML = `<p><hr />${this.controller.item.name} 
         LVL: ${this.controller.item.lvl}  
         COST: ${this.controller.item.cost}
+        ATK BONUS: ${this.controller.item.currentBonus}
         <button class="btn buy">buyme</button> <hr /></p>`
         this.registerEventListeners();
     }
