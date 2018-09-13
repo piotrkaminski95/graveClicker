@@ -1,8 +1,9 @@
+import {targetObservator} from "../model/Observator.js";
 export class TargetView {
     
     constructor(controller) {
         this.controller = controller;
-        this.controller.target.subscribe(this);
+        targetObservator.subscribe(this);
         this.element = this.createElement();
         this.registerEventListeners();
     }

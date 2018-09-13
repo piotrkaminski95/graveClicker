@@ -3,9 +3,9 @@ export class Item {
         this._type = null;
         this._id = null;
         this._name = null;
-        this._startCost = null;
-        this._startBonus = null;
-        this._lvl = 1;
+        this._cost = null;
+        this._bonus = null;
+        this._lvl = 0;
     }
 
     static createFromObject(obj){
@@ -26,12 +26,12 @@ export class Item {
         return this._name;
     }
 
-    get startCost() {
-        return this._startCost;
+    get cost() {
+        return this._cost;
     }
 
-    get startBonus() {
-        return this._startBonus;
+    get bonus() {
+        return this._bonus;
     }
 
     get lvl(){
@@ -50,15 +50,19 @@ export class Item {
         this._name = value;
     }
 
-    set startCost(value) {
-        this._startCost = value;
+    set cost(value) {
+        this._cost = value;
     }
 
-    set startBonus(value) {
-        this._startBonus = value;
+    set bonus(value) {
+        this._bonus = value;
     }
 
     set lvl(value){
         this._lvl = value;
+    }
+
+    lvlUp(){
+        this._lvl++;
     }
 }

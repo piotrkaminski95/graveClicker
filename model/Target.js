@@ -4,9 +4,7 @@ export class Target {
         this._fullHp;
         this._hp;
         this._grave;
-        this._level = 1;
-        this.observers = [];
-        
+        this._level = 1;        
     }
     
     static get BASE_HP() {
@@ -87,22 +85,5 @@ export class Target {
     
     levelUp() {
         this._level++;
-    }
-    
-    subscribe(observer) {
-        this.observers.push(observer);
-    }
-    
-    unsubscribe(observer) {
-        let index = this.observers.indexOf(observer);
-        if (index > -1) {
-            this.observers.slice(index, 1);
-        }
-    }
-    
-    notifyAll(status) {
-        for (let obs of this.observers) {
-            obs.update(status);
-        }
     }
 }

@@ -2,6 +2,7 @@ import {Target} from "../model/Target.js";
 import {Grave} from "../model/Grave.js";
 import {TargetView} from "../view/TargetView.js"
 import {cementary} from "../model/Cementary.js";
+import {targetObservator} from "../model/Observator.js";
 
 
 export class TargetController {
@@ -29,13 +30,15 @@ export class TargetController {
             console.log("change target")
             this.changeTarget();
         } else {
-            this.target.notifyAll({status:"hit", target:this._target});
+            targetObservator.notifyAll({status:"hit", target:this._target});
         }
     }
     
     changeTarget() {
         this._target.grave = this.cementary.next();
         this._target.fullHp = Target.BASE_HP * this._target.level;
-        this._target.notifyAll({status:"digged", target:this._target});
+        this._target.notifyAll();
+        this._target.fullHp = 10;
+        targetObservator.notifyAll({status:"digged", target:this._target});
     }
 }

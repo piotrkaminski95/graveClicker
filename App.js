@@ -18,7 +18,6 @@ let panelGame = document.getElementsByClassName("panel")[0];
 panelGame.appendChild(gamePanelView.element);
 
 localStorage.setItem('itemSet', items)
-console.log(storage.itemSet.length);
 
 let itemBoard = document.getElementsByClassName("panelContent")[0];
 for(let item of storage.itemSet){
