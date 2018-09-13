@@ -22,9 +22,9 @@ export class ItemController{
         if(character.coins > this.item.cost){
             this.item.lvlUp();
             character.coins -= this.item.cost;
+            character.atk += this.item.atk;
         }
         itemObservator.notifyAll(this.item);
-        console.log(this.item.lvl);
     }
     
 }

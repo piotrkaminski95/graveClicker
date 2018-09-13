@@ -11,10 +11,10 @@ export class ItemView{
 
     render(){
         return `<div class="tabcontent ${this.controller.item.type}" id=${this.controller.item.id}>
-        <hr /> <p>${this.controller.item.name} 
+         <p><hr />${this.controller.item.name} 
         LVL: ${this.controller.item.lvl}  
         COST: ${this.controller.item.cost}
-        <button class="btn buy">buyme</button> </p> <hr /></div>
+        <button class="btn buy">buyme</button> <hr /></p></div>
         `
     }
     createElement() {
@@ -31,10 +31,10 @@ export class ItemView{
         
         let element = document.getElementById(this.controller.item.id);
 
-        element.innerHTML = `<p>${this.controller.item.name} 
+        element.innerHTML = `<p><hr />${this.controller.item.name} 
         LVL: ${this.controller.item.lvl}  
         COST: ${this.controller.item.cost}
-        <button class="btn buy">buyme</button> </p>`
+        <button class="btn buy">buyme</button> <hr /></p>`
         this.registerEventListeners();
     }
 }
