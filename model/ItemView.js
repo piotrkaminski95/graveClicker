@@ -6,9 +6,8 @@ export class ItemView{
     }
 
     render(){
-        return `<div class= "panelContent" id="companions">
-                     dfsdfsdf   
-                    </div>
+        return `<div class="tabcontent ${this.controller.item.type}">
+        <hr /><p>${this.controller.item.name} LVL: ${this.controller.item.lvl} <button class="btn">buyme</button>  </p><hr /></div>
         `
     }
     createElement() {
