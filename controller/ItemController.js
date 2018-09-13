@@ -20,9 +20,14 @@ export class ItemController{
 
     changeStatisticObject(e) {
         if(character.coins > this.item.cost){
-            this.item.lvlUp();
+            
             character.coins -= this.item.cost;
-            character.atk += this.item.atk;
+            character.atk += this.item.cost - this.item.previousBonus;
+            this.item.previousBonus = this.item.currentBonus;
+            this.item.lvlUp();
+            this.item.costGrow();
+            this.item.atkGrow();
+
         }
         itemObservator.notifyAll(this.item);
     }

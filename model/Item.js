@@ -1,17 +1,24 @@
+import {mathemathicHelper} from "./MathemathicHelper";
+
 export class Item {
     constructor(){
         this._type = null;
         this._id = null;
         this._name = null;
         this._cost = null;
-        this._bonus = null;
+        this._currentBonus = null;
         this._lvl = 0;
+        this._previousBonus = 0;
     }
 
     static createFromObject(obj){
         let item = new Item();
         Object.assign(item, obj);
         return item;
+    }
+
+    get previousBonus() {
+        return this._previousBonus;
     }
 
     get type() {
@@ -30,12 +37,16 @@ export class Item {
         return this._cost;
     }
 
-    get bonus() {
-        return this._bonus;
+    get currentBonus() {
+        return this._currentBonus;
     }
 
     get lvl(){
         return this._lvl;
+    }
+
+    set previousBonus(value) {
+        this._previousBonus = value;
     }
 
     set type(value){
@@ -54,8 +65,8 @@ export class Item {
         this._cost = value;
     }
 
-    set bonus(value) {
-        this._bonus = value;
+    set currentBonus(value) {
+        this._currentBonus = value;
     }
 
     set lvl(value){
@@ -64,5 +75,15 @@ export class Item {
 
     lvlUp(){
         this._lvl++;
+    }
+
+    costGrow(){
+        this.cost = mathemathicHelper.costGrowUp(cost);
+        console.log(cost);
+    }
+
+    atkGrow(){
+        this.currentBonus = mathemathicHelper.costGrowUp(this.currentBonus);
+        cosnole.log(this.currentBonus);
     }
 }
