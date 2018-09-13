@@ -18,7 +18,7 @@ export class TargetView {
                     <img id="gravestone-img" src="./img/gravestone.png">
                     </div>
                     <div class="target-grave" id="target">
-                        <img id="grave-img" src="${this.controller.target.targetImg}">
+                        <img id="grave-img" src="${this.controller.target.targetImg}" alt="<img src='./img/grave1.png'>">
                     </div>
                 </div>`
     }
