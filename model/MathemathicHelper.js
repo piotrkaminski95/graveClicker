@@ -1,7 +1,4 @@
-class MathemathicHelper {
-    constructor(){
-
-    }
+export class MathemathicHelper {
 
     static costGrowUp(XP){
         let constA = 8.7;
@@ -11,5 +8,3 @@ class MathemathicHelper {
     }
 
 }
-
-export let mathemathicHelper = new MahtemathicHelper();

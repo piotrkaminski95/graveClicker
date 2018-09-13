@@ -1,4 +1,4 @@
-import {mathemathicHelper} from "./MathemathicHelper";
+import {MathemathicHelper} from "./MathemathicHelper";
 
 export class Item {
     constructor(){
@@ -78,12 +78,12 @@ export class Item {
     }
 
     costGrow(){
-        this.cost = mathemathicHelper.costGrowUp(cost);
+        this.cost = MathemathicHelper.costGrowUp(cost);
         console.log(cost);
     }
 
     atkGrow(){
-        this.currentBonus = mathemathicHelper.costGrowUp(this.currentBonus);
+        this.currentBonus = MathemathicHelper.costGrowUp(this.currentBonus);
         cosnole.log(this.currentBonus);
     }
 }
