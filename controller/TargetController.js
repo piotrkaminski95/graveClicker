@@ -41,4 +41,20 @@ export class TargetController {
         this._target.fullHp = Target.BASE_HP * this.target.level;
         targetObservator.notifyAll({status:"digged", target:this._target});
     }
+    
+    update(data) {
+        let power = 1;
+        if (data["status"] === "timerHit") {
+            this.target.getHit(power);
+            if (this._target.isDiged()) {
+                console.log("change target");
+                this.target.levelUp();
+                this.changeTarget();
+            } else {
+                targetObservator.notifyAll({status:data["status"], target:this._target, power: power});
+        
+            }
+        }
+    }
+
 }

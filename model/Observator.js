@@ -24,3 +24,4 @@ class Observator{
 export let targetObservator = new Observator();
 export let itemObservator = new Observator();
 export let coinObservator = new Observator();
+export let timerObservator = new Observator();

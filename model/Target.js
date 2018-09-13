@@ -82,5 +82,5 @@ export class Target {
     
     levelUp() {
         this._level++;
-    }
+    }    
 }

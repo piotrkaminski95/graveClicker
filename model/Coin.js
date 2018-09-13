@@ -22,5 +22,9 @@ export class Coin {
             character.coins += Math.ceil(MathemathicHelper.countPercent(target.fullHp, 10));
             console.log("add " + character.coins + " coin");
         }
+        
+        if (data["status"] === "timerHit") {
+            character.coins += data["power"];
+        }
     }
 }
