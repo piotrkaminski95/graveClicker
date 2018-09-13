@@ -1,10 +1,14 @@
 export class MathemathicHelper {
+    
+    static costGrowUp(startValue, level){
+        
+        let q = 2.8;
+        return Math.round(startValue * Math.pow(q, (level+1)));
+    }
 
-    static costGrowUp(XP){
-        let constA = 8.7;
-        let constB = -40;
-        let constC = 111;
-        return Math.max( Math.floor( constA * Math.log( XP + constC ) + constB ), 1 )
+    static bonusGrowUp(startValue, level){
+        let q = 1.3;
+        return Math.round(startValue * Math.pow(q, (level+1)));
     }
     
     static countHpPercent(hp, fullHp) {
