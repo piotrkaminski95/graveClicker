@@ -1,8 +1,9 @@
+import {targetObservator} from "../model/Observator.js";
 export class TargetView {
     
     constructor(controller) {
         this.controller = controller;
-        this.controller.target.subscribe(this);
+        targetObservator.subscribe(this);
         this.element = this.createElement();
         this.registerEventListeners();
     }
@@ -33,7 +34,7 @@ export class TargetView {
         this.element.getElementsByClassName("target-grave")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
     }
     
-    update() {
+    update(data) {
         console.log(this.controller.target.targetName + "  " + this.controller.target.targetImg);
         let elem = document.getElementsByClassName("board")[0];
         console.log(elem);

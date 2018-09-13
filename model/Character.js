@@ -1,8 +1,8 @@
-export class Character {
+class Character {
     constructor() {
         this._name = "Player";
-        this._coins = 0;
-        this._weapon = {weaponName: "fist", atk: 1};
+        this._coins = 50;
+        this._atk = 4;
     }
 
     get name() {
@@ -10,11 +10,7 @@ export class Character {
     }
 
     get atk() {
-        return this._weapon["atk"];
-    }
-
-    get weaponName() {
-        return this._weapon["weaponName"];
+        return this._atk;
     }
 
     get coins() {
@@ -30,14 +26,11 @@ export class Character {
     }
 
     set atk(value) {
-        this._weapon["atk"] = value;
-    }
-
-    set weaponName(value){
-        this._weapon["weaponName"] = value;
+        this._atk = value;
     }
 
     set coins(value) {
         this._coins = value;
     }
 }
+export let character = new Character();
