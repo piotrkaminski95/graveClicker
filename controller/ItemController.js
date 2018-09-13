@@ -19,7 +19,7 @@ export class ItemController{
     }
 
     changeStatisticObject(e) {
-        if(character.coins > this.item.cost){
+        if(character.coins >= this.item.cost){
             
             character.coins -= this.item.cost;
             character.atk += (this.item.currentBonus - this.item.previousBonus);

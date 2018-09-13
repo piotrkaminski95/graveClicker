@@ -10,6 +10,8 @@ import {ItemController} from "./controller/ItemController.js";
 import {ItemView} from "./view/ItemView.js";
 import {items} from "./resources/itemsJS/items.js";
 import {storage} from "./storage/Storage.js";
+import {CoinView} from "./view/CoinView.js";
+import {Coin} from "./model/Coin.js";
 
 localStorage.clear;
 let gameController = new GamePanelController();
@@ -25,6 +27,9 @@ for(let item of storage.itemSet){
     let itemView = new ItemView(itemController);
     itemBoard.appendChild(itemView.element);
 }
+
+let coinView = new CoinView();
+let coin = new Coin();
 
 let target = new Target();
 target.fullHp = 0;

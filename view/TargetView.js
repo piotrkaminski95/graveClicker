@@ -1,4 +1,6 @@
 import {targetObservator} from "../model/Observator.js";
+import {MathemathicHelper} from "../model/MathemathicHelper.js";
+
 export class TargetView {
     
     constructor(controller) {
@@ -8,7 +10,6 @@ export class TargetView {
         this.registerEventListeners();
     }
     
-    // static img - change to dynamic
     render() {
         return `<div class="board">
                     <div class="target-gravestone" id="gravestone">
@@ -37,9 +38,7 @@ export class TargetView {
     update(data) {
         console.log(this.controller.target.targetName + "  " + this.controller.target.targetImg);
         let elem = document.getElementsByClassName("board")[0];
-        console.log(elem);
-//        elem.getElementsByClassName("targetName")[0].innerHTML = this.controller.target.targetName;
         elem.getElementsByTagName("img")[1].setAttribute("src", this.controller.target.targetImg);
-        elem.firstElementChild.firstElementChild.firstElementChild.setAttribute("style", "height: 24px; width: " + this.controller.target.countHpPercent() + "%; background-color: red;");
+        elem.firstElementChild.firstElementChild.firstElementChild.setAttribute("style", `height: 24px; width: ${MathemathicHelper.countHpPercent(this.controller.target.hp, this.controller.target.fullHp)}%; background-color: red;`);
     }
 }
