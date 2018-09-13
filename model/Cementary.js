@@ -1,3 +1,5 @@
+import {Grave} from "../model/Grave.js";
+
 export class cementary {
     constructor() {
         this.index = 6;
@@ -19,7 +21,7 @@ export class cementary {
     getImgs() {
         let arr = [];
         for (let i = 1; i <= 4; i++) {
-            arr.push("./img/square" + i + ".png");
+            arr.push("./img/grave" + i + ".png");
         }
         return arr;
     }

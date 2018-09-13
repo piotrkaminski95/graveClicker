@@ -7,14 +7,20 @@ export class TargetView {
         this.registerEventListeners();
     }
     
+    // static img - change to dynamic
     render() {
-        return `<div class="target">
-                    <p class="targetName">${this.controller.target.targetName}</p>
-                    <img src="${this.controller.target.targetImg}" alt="grave" id="graveImg" style="height: 50px">
-                    <div class="lifeBar" style="border: red 2px solid">
-                        <div class="lifeValue" value="${this.controller.target.hp}" style="height: 24px; width: 100%; background-color: red"></div>
+        return `<div class="board">
+                    <div class="target-gravestone" id="gravestone">
+                    <div class"hpBar" style="border: red 2px solid;">
+                        <div class"hpValue" style="height: 14px; width: 100%; background-color: red;">
+                        </div>
                     </div>
-                </div>`;
+                    <img id="gravestone-img" src="./img/gravestone.png">
+                    </div>
+                    <div class="target-grave" id="target">
+                        <img id="grave-img" src="./img/grave1.png">
+                    </div>
+                </div>`
     }
     
     createElement() {
@@ -24,15 +30,16 @@ export class TargetView {
     }
     
     registerEventListeners() {
-        this.element.getElementsByTagName("img")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
+        console.log(this.element);
+        this.element.getElementsByClassName("target-grave")[0].addEventListener('click', this.controller.handleClick.bind(this.controller));
     }
     
     update() {
         console.log(this.controller.target.targetName + "  " + this.controller.target.targetImg);
-        let elem = document.getElementsByClassName("target")[0];
-        elem.getElementsByClassName("targetName")[0].innerHTML = this.controller.target.targetName;
-        elem.getElementsByTagName("img")[0].setAttribute("src", this.controller.target.targetImg);
-        elem.getElementsByClassName("lifeValue")[0].setAttribute("value", this.controller.target.hp);
-        elem.getElementsByClassName("lifeValue")[0].setAttribute("style", "height: 24px; width: " + this.controller.target.countHpPercent() + "%; background-color: red;");
+        let elem = document.getElementsByClassName("board")[0];
+        console.log(elem);
+//        elem.getElementsByClassName("targetName")[0].innerHTML = this.controller.target.targetName;
+        elem.getElementsByTagName("img")[1].setAttribute("src", this.controller.target.targetImg);
+        elem.firstElementChild.firstElementChild.firstElementChild.setAttribute("style", "height: 24px; width: " + this.controller.target.countHpPercent() + "%; background-color: red;");
     }
 }

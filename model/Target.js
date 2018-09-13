@@ -60,18 +60,14 @@ export class Target {
     changeTargetImg() {
         let hPercent = this.countHpPercent();
         
-        if (hPercent < 75) {
-            if (hPercent < 50) {
-                if (hPercent < 25) {
-                    this.grave._imgIndex = 0;
-                } else {
-                    this.grave._imgIndex = 3;
-                }
-            } else {
-                this.grave._imgIndex = 2;
-            }
-        } else {
+        if (hPercent < 25) {
+            this.grave._imgIndex = 0;
+        } else if (hPercent < 50) {
+            this.grave._imgIndex = 2;
+        } else if (hPercent < 75) {
             this.grave._imgIndex = 1;
+        } else {
+            this.grave._imgIndex = 0
         }
     }
 
