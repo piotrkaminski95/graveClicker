@@ -8,16 +8,25 @@ import {GamePanelView} from "./model/GamePanelView.js"
 import {GamePanelController} from "./model/GamePanelController.js";
 import {ItemController} from "./model/ItemController.js";
 import {ItemView} from "./model/ItemView.js";
+import {items} from "./resources/itemsJS/items.js";
+import {storage} from "./storage/Storage.js";
 
+localStorage.clear;
 let gameController = new GamePanelController();
 let gamePanelView = new GamePanelView(gameController);
 let panelGame = document.getElementsByClassName("panel")[0];
 panelGame.appendChild(gamePanelView.element);
 
-let itemController = new ItemController();
-let itemView = new ItemView(itemController);
-let items = document.getElementsByClassName("panel-game")[0];
-items.appendChild(itemView.element);
+
+localStorage.setItem('itemSet', items)
+console.log(storage.itemSet.length);
+let itemBoard = document.getElementsByClassName("panelContent")[0];
+for(let item of storage.itemSet){
+    console.log("dziala?");
+    let itemController = new ItemController(item);
+    let itemView = new ItemView(itemController);
+    itemBoard.appendChild(itemView.element)
+}
 
 let grave = new Grave();
 grave.setNameAndImage("testGrave", "./img/square.png");
