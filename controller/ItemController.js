@@ -25,7 +25,6 @@ export class ItemController{
             character.atk += (this.item.currentBonus - this.item.previousBonus);
             this.item.previousBonus = this.item.currentBonus;
             
-            
             this.item.costGrow();
             this.item.atkGrow();
             this.item.lvlUp();
