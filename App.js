@@ -15,7 +15,7 @@ import {Coin} from "./model/Coin.js";
 import {MathemathicHelper} from "../model/MathemathicHelper.js";
 import {timer} from "./model/Timer.js";
 // UNCOMMENT THIS TO START TIMER
-//import {timerObservator} from "./model/Observator.js";
+import {timerObservator} from "./model/Observator.js";
 
 localStorage.clear;
 let gameController = new GamePanelController();
@@ -47,4 +47,4 @@ let graveyard = document.getElementsByClassName("site")[0];
 graveyard.appendChild(tView.element);
 
 // UNCOMMENT THIS TO START TIMER
-//timerObservator.subscribe(tController);
+timerObservator.subscribe(tController);

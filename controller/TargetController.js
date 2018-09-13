@@ -4,7 +4,7 @@ import {TargetView} from "../view/TargetView.js"
 import {cementary} from "../model/Cementary.js";
 import {targetObservator} from "../model/Observator.js";
 import {MathemathicHelper} from "../model/MathemathicHelper.js";
-
+import {character} from "../model/Character.js";
 
 export class TargetController {
     
@@ -43,7 +43,8 @@ export class TargetController {
     }
     
     update(data) {
-        let power = 1;
+        let power = character.companionsAtk;
+        console.log("tctrl -- " + power);
         if (data["status"] === "timerHit") {
             this.target.getHit(power);
             if (this._target.isDiged()) {
