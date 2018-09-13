@@ -1,0 +1,222 @@
+body {
+    background-image: url("img/background.png");
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    /* Scale the background image to be as large as possible */
+    background-size:cover;
+}
+
+span {
+    padding:0; margin:0; 
+    display:block;
+}
+
+span > img {
+    max-width: none;
+    min-width: none;
+    margin: -0.13em;
+}
+
+.btn {
+    /* default for <button>, but useful for <a> */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+
+    /* create a small space when buttons wrap on 2 lines */
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    margin-bottom: 0.5vw;
+
+    /* invisible border (will be colored on hover/focus) */
+    border: solid 1px transparent;
+    border-radius: 4px;
+
+    /* size comes from text & padding (no width/height) */
+    padding: 0.5em 1em;
+
+    /* make sure colors have enough contrast! */
+    color:azure;
+    background-color:darkslategray;
+}
+
+/* old-school "down" effect on clic + color tweak */
+.btn:active {
+    transform: translateY(1px);
+    filter: saturate(150%);
+}
+
+/* inverse colors on mouse-over */
+.btn:hover {
+    color: #9555af;
+    border-color: currentColor;
+    background-color: white;
+}
+
+.site {
+    display: grid;
+    min-height: 99vh;
+    max-height: 99vh;
+    min-width: 99vw;
+    max-width: 99vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.7fr 1fr 20fr;
+    grid-template-areas: 
+    "header header"
+    "panel score"
+    "panel board";
+}
+.score {
+    margin: auto;
+    min-width: 30vw;
+    grid-area: score;
+    
+}
+.score p {
+    text-align: center;
+    margin: 1vmin;
+    font-size: 2em;
+    font-family: cursive;
+    font-stretch: extra-expanded;
+    font-weight: bold;
+    color:crimson;
+    background-color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.5);
+    border-radius: 3vmin;
+    background-size: contain;
+
+}
+
+.header {
+    grid-area: header;
+    min-width: 100vw;
+    background: rgba(0, 0, 0, 0.56);
+    
+    text-align: center;
+    color: aliceblue;
+    text-rendering: geometricPrecision;
+    text-transform:uppercase;
+    font-family:fantasy;
+    font-size: 1.5em;
+    font-size-adjust: auto;
+
+}
+
+.panel {
+    max-height: 80vh;
+    grid-area: panel;
+    margin: auto;
+}
+    
+.transparent-border {
+    margin: auto;
+    align-self: center;
+    max-height: 80vh; 
+    max-width: 80vw;
+    min-width: 700px;
+    padding: 1vh;
+    border-radius: 3vmin;
+    display: grid;
+    background: rgba(0, 0, 0, 0.7);
+
+    grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 1fr 30fr;
+    grid-template-areas: 
+    ". tablink1 tablink2 tablink3 tablink4 ." 
+    "panelContent panelContent panelContent panelContent panelContent panelContent" ;
+}
+
+.board {
+    grid-area: board;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-template-rows: 1.5fr 2fr 2fr;
+    grid-template-areas: 
+    ". . ." 
+    ". gravestone ." 
+    ". grave ." ;
+}
+    
+.board > .target-gravestone {
+    grid-area: gravestone;}
+
+.board > .target-grave {
+
+    grid-area: grave;
+}
+
+.tablink1 {
+    display: inline-block;
+    grid-area: tablink1;
+}
+.tablink2 {
+    display: inline-block;
+    grid-area: tablink2;
+}
+.tablink3 {
+    display: inline-block;
+    grid-area: tablink3;
+}
+.tablink4 {
+    display: inline-block;
+    grid-area: tablink4;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+}
+.panelContent {
+    grid-area:  panelContent;
+    max-height: inherit;
+    overflow-y:scroll;
+    align-content: center;
+    text-align: center;
+    color: azure;    
+}
+
+
+@media screen and (max-width: 1140px) {
+    
+    .site {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 0.5fr 5fr 5fr;
+        grid-template-areas: 
+        "header"
+        "score"
+        "panel"
+        "board";
+    }
+    
+    .panel {
+        margin-top: 1vh;
+        max-height: 30vh;
+        }
+    
+    .transparent-border {
+        max-height: 30vh;
+        padding: 1vh;
+    }
+    
+    .board {
+        
+        margin: auto;
+        grid-template-columns: 3fr 3fr 3fr;
+        grid-template-rows: 0.5fr 4fr 4fr;
+        grid-template-areas: 
+        ". . ." 
+        ". gravestone ." 
+        ". grave ." ;
+    }
+    
+    span > img {
+        align-self: center;
+        max-width: 30vh;
+        margin-bottom:-1vh;
+    }
+    
+}
+
+
