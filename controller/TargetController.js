@@ -37,7 +37,9 @@ export class TargetController {
     }
     
     changeTarget() {
+        console.log("-----" + this.cementary.getGravestoneImg());
         this._target.grave = this.cementary.next();
+        this._target.grave.gravestone = this.cementary.getGravestoneImg();
         this._target.fullHp = Target.BASE_HP * this.target.level;
         targetObservator.notifyAll({status:"digged", target:this._target});
     }

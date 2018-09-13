@@ -6,6 +6,7 @@ export class cementary {
         this.gravestones = this.collectGravestones();
         this.graveyard = [];
         this.addGraves();
+        console.log("---" + this.gravestones[0] + "/" + this.gravestones[1]);
     }
     
     addGraves() {
@@ -30,7 +31,8 @@ export class cementary {
     getGravestoneImg() {
         let randInt = Math.floor((Math.random() * 3) + 1);
         
-        if (randInt < 0 || randInt > this.gravestones.length) {
+        console.log("random --- " + randInt);
+        if (randInt < 0 || randInt >= this.gravestones.length) {
             return this.gravestones[0];
         } else {
             return this.gravestones[randInt];
@@ -39,7 +41,7 @@ export class cementary {
     
     collectGravestones() {
         let arr = [];
-        for (let i = 1; i <= 4; i++) {
+        for (let i = 1; i <= 1; i++) {
             arr.push("./img/gravestone" + i + ".png");
         }
         return arr;

@@ -17,7 +17,7 @@ export class TargetView {
                         <div class"hpValue" style="height: 14px; width: 100%; background-color: red;">
                         </div>
                     </div>
-                    <img id="gravestone-img" src="./img/gravestone.png">
+                    <img id="gravestone-img" src="./img/gravestone1.png">
                     </div>
                     <div class="target-grave" id="target">
                         <img id="grave-img" src="./img/grave1.png">
@@ -38,7 +38,14 @@ export class TargetView {
     update(data) {
         console.log(this.controller.target.targetName + "  " + this.controller.target.targetImg);
         let elem = document.getElementsByClassName("board")[0];
+        console.log("--------- " + this.controller.target.grave.gravestone)
+        // change gravestone img
+        elem.getElementsByTagName("img")[0].setAttribute("src", this.controller.target.grave.gravestone);
+
+        // change grave img
         elem.getElementsByTagName("img")[1].setAttribute("src", this.controller.target.targetImg);
+        
+        // update life bar
         elem.firstElementChild.firstElementChild.firstElementChild.setAttribute("style", `height: 24px; width: ${MathemathicHelper.countHpPercent(this.controller.target.hp, this.controller.target.fullHp)}%; background-color: red;`);
     }
 }
