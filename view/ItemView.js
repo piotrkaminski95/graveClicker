@@ -11,7 +11,10 @@ export class ItemView{
 
     render(){
         return `<div class="tabcontent ${this.controller.item.type}" id=${this.controller.item.id}>
-        <hr /> ${this.renderP()} <hr /></div>
+        <hr /> <p>${this.controller.item.name} 
+        LVL: ${this.controller.item.lvl}  
+        COST: ${this.controller.item.cost}
+        <button class="btn buy">buyme</button> </p> <hr /></div>
         `
     }
     createElement() {
@@ -19,28 +22,19 @@ export class ItemView{
         elem.innerHTML = this.render().trim();
         return elem.content.firstChild;
     }
-
-    renderP(){
-        return `<p>${this.controller.item.name} 
-        LVL: ${this.controller.item.lvl}  
-        COST: ${this.controller.item.cost}
-        <button class="btn buy">buyme</button> </p>`
-
-    }
-    
     
     registerEventListeners(){
         this.element.getElementsByClassName('buy')[0].addEventListener('click',this.controller.changeStatisticObject.bind(this.controller));
     }
 
     update(data) {
-        console.log("this update");
-        console.log(this.controller.item.id);
         
         let element = document.getElementById(this.controller.item.id);
 
-        element.innerHTML = this.render();
-
-
+        element.innerHTML = `<p>${this.controller.item.name} 
+        LVL: ${this.controller.item.lvl}  
+        COST: ${this.controller.item.cost}
+        <button class="btn buy">buyme</button> </p>`
+        this.registerEventListeners();
     }
 }
