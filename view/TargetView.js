@@ -7,7 +7,6 @@ export class TargetView {
         this.registerEventListeners();
     }
     
-    // static img - change to dynamic
     render() {
         return `<div class="board">
                     <div class="target-gravestone" id="gravestone">
