@@ -54,9 +54,6 @@ span > img {
     background-color: white;
 }
 
-
-
-
 .site {
     display: grid;
     min-height: 99vh;
@@ -148,7 +145,7 @@ span > img {
 
     grid-area: grave;
 }
-    
+
 .tablink1 {
     display: inline-block;
     grid-area: tablink1;
