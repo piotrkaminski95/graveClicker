@@ -12,7 +12,9 @@ import {items} from "./resources/itemsJS/items.js";
 import {storage} from "./storage/Storage.js";
 import {CoinView} from "./view/CoinView.js";
 import {Coin} from "./model/Coin.js";
+import {MathemathicHelper} from "../model/MathemathicHelper.js";
 
+console.log(MathemathicHelper.shortFormatNumber(1100000000));
 localStorage.clear;
 let gameController = new GamePanelController();
 let gamePanelView = new GamePanelView(gameController);

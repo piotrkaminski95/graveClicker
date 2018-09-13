@@ -1,5 +1,6 @@
 import {coinObservator} from "../model/Observator.js";
 import {character} from "../model/Character.js";
+import {MathemathicHelper} from "../model/MathemathicHelper.js";
 
 export class CoinView {
     constructor(controller) {
@@ -10,6 +11,6 @@ export class CoinView {
     }
     
     update(data) {
-        this.element.textContent = "$" + character.coins;
+        this.element.textContent = MathemathicHelper.shortFormatNumber(character.coins);
     }
 }
