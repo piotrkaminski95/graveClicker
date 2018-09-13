@@ -5,16 +5,16 @@ export class GamePanelController {
 
     openContent(e) {
         let name = e.target.name;
-        let i, tabcontent, tablinks;
+        let i, tabcontent, contentToDisplay;
         tabcontent = document.getElementsByClassName("tabcontent");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
+        
+        contentToDisplay = document.getElementsByClassName(name);
+        for(i = 0; i < contentToDisplay.length; i++){
+            console.log("change from none to block");
+            contentToDisplay[i].style.display = "block";
         }
-        document.getElementById(name).style.display = "block";
-    
     }
 }
