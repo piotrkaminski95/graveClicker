@@ -4,6 +4,7 @@ export class Grave {
         this._name;
         this._imgArr;
         this._imgIndex = 0;
+        this._gravestone;
     }
     
     static createGrave(name, imgSrc) {
@@ -17,6 +18,14 @@ export class Grave {
         let grave = new Grave();
         Object.assign(grave, obj);
         return grave;
+    }
+    
+    get gravestone() {
+        return this._gravestone;
+    }
+    
+    set gravestone(value) {
+        this._gravestone = value;
     }
     
     get name() {

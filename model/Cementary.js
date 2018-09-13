@@ -3,8 +3,10 @@ import {Grave} from "../model/Grave.js";
 export class cementary {
     constructor() {
         this.index = 6;
+        this.gravestones = this.collectGravestones();
         this.graveyard = [];
         this.addGraves();
+        console.log("---" + this.gravestones[0] + "/" + this.gravestones[1]);
     }
     
     addGraves() {
@@ -24,5 +26,25 @@ export class cementary {
             arr.push("./img/grave" + i + ".png");
         }
         return arr;
+    }
+    
+    getGravestoneImg() {
+        let randInt = Math.floor((Math.random() * 3) + 1);
+        
+        console.log("random --- " + randInt);
+        if (randInt < 0 || randInt >= this.gravestones.length) {
+            return this.gravestones[0];
+        } else {
+            return this.gravestones[randInt];
+        }
+    }
+    
+    collectGravestones() {
+        let arr = [];
+        for (let i = 1; i <= 1; i++) {
+            arr.push("./img/gravestone" + i + ".png");
+        }
+        return arr;
+        
     }
 }
