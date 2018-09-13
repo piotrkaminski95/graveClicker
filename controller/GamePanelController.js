@@ -13,7 +13,6 @@ export class GamePanelController {
         
         contentToDisplay = document.getElementsByClassName(name);
         for(i = 0; i < contentToDisplay.length; i++){
-            console.log("change from none to block");
             contentToDisplay[i].style.display = "block";
         }
     }

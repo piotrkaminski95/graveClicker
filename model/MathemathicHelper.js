@@ -1,10 +1,14 @@
 export class MathemathicHelper {
+    
+    static costGrowUp(startValue, level){
+        
+        let q = 2.8;
+        return Math.round(startValue * Math.pow(q, (level+1)));
+    }
 
-    static costGrowUp(XP){
-        let constA = 8.7;
-        let constB = -40;
-        let constC = 111;
-        return Math.max( Math.floor( constA * Math.log( XP + constC ) + constB ), 1 )
+    static bonusGrowUp(startValue, level){
+        let q = 1.3;
+        return Math.round(startValue * Math.pow(q, (level+1)));
     }
     
     static countHpPercent(hp, fullHp) {
@@ -14,8 +18,7 @@ export class MathemathicHelper {
     static countPercent(num, percent) {
         return (num/100) * percent;
     }
-    
-    
+
     static shortFormatNumber(num) {        
         let suffix = ['', 'k', 'm', 'g', 't', 'p', 'e', 'z', 'y'];
         let base = 10;
