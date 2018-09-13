@@ -1,10 +1,12 @@
+import {MathemathicHelper} from "../model/MathemathicHelper.js";
+
 export class Target {
     
     constructor() {
         this._fullHp;
         this._hp;
         this._grave;
-        this._level = 1;        
+        this._level = 0;        
     }
     
     static get BASE_HP() {
@@ -65,7 +67,7 @@ export class Target {
     }
     
     changeTargetImg() {
-        let hPercent = this.countHpPercent();
+        let hPercent = MathemathicHelper.countHpPercent(this.hp, this.fullHp);
         
         if (hPercent < 25) {
             this.grave._imgIndex = 0;
@@ -76,11 +78,6 @@ export class Target {
         } else {
             this.grave._imgIndex = 0
         }
-    }
-
-    // extreact to mathHelper
-    countHpPercent() {
-        return (this._hp / this._fullHp).toFixed(2) * 100;
     }
     
     levelUp() {
