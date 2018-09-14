@@ -8,9 +8,9 @@ export class GamePanelView{
     render(){
         return `<div class="transparent-border">
                     <button class="tablink tablink1 btn" name="companions">Companions</button>
-                    <button class="tablink tablink2 btn" name="shop">Shop</button>
+                    <button class="tablink tablink2 btn" type="button" disabled>Shop</button>
                     <button class="tablink tablink3 btn" name="inventory">Inventory</button> 
-                    <button class="tablink tablink4 btn" name="passive">Passives</button>
+                    <button class="tablink tablink4 btn" type="button"  disabled>Passives</button>
                     <div class="panelContent"><div>
 </div>`;
     }
