@@ -18,10 +18,9 @@ span {
     display:block;
 }
 
-div > img {
+img {
     max-height: 20vh;
-    min-height: 20vh;
-    
+    min-height: 20vh;    
 }
 
 .btn {
@@ -240,7 +239,7 @@ button[disabled]{
         ". grave ." ;
     }
     
-    span > img {
+    img {
         align-self: center;
         max-width: 30vh;
         margin-bottom:-1vh;
