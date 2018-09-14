@@ -193,7 +193,6 @@ button[disabled]{
 .tabcontent {
     color: white;
     display: none;
-    padding: 50px;
 }
 .panelContent {
     grid-area:  panelContent;
