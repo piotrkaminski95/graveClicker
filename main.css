@@ -125,7 +125,7 @@ button[disabled]{
     text-rendering: geometricPrecision;
     text-transform:uppercase;
     font-family:fantasy;
-    font-size: 1.5em;
+    font-size: 5.5vh;
     font-size-adjust: auto;
 
 }

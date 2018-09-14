@@ -49,6 +49,7 @@ export class TargetController {
         console.log("tctrl -- " + power);
         if (data["status"] === "timerHit") {
             this.target.getHit(power);
+        this.target.changeTargetImg();
             if (this._target.isDiged()) {
                 console.log("change target");
                 this.target.levelUp();
