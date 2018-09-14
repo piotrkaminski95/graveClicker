@@ -1,7 +1,7 @@
 body {
     background-image: 
-            url("img/bkgndgraveleft.png"),
-            url("img/background.png");
+            url("resources/img/bkgndgraveleft.png"),
+            url("resources/img/background.png");
     
     background-attachment:fixed;
     background-repeat: no-repeat;

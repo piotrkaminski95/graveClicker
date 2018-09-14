@@ -23,7 +23,7 @@ export class cementary {
     getImgs() {
         let arr = [];
         for (let i = 1; i <= 4; i++) {
-            arr.push("./img/grave" + i + ".png");
+            arr.push("../resources/img/grave" + i + ".png");
         }
         return arr;
     }
@@ -42,7 +42,7 @@ export class cementary {
     collectGravestones() {
         let arr = [];
         for (let i = 1; i <= 1; i++) {
-            arr.push("./img/gravestone" + i + ".png");
+            arr.push("../resources/img/gravestone" + i + ".png");
         }
         return arr;
         
