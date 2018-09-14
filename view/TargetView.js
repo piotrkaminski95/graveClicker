@@ -13,14 +13,14 @@ export class TargetView {
     render() {
         return `<div class="board">
                     <div class="target-gravestone" id="gravestone">
-                    <div class"hpBar" style="border: red 2px solid;">
-                        <div class"hpValue" style="height: 14px; width: 100%; background-color: red;">
+                    <div class="hpBar" style="border: red 2px solid;">
+                        <div class="hpValue" style="height: 14px; width: 100%; background-color: red;">
                         </div>
                     </div>
-                    <img id="gravestone-img" src="./img/gravestone1.png">
+                    <img id="gravestone-img" src="../resources/img/gravestone1.png">
                     </div>
                     <div class="target-grave" id="target">
-                        <img id="grave-img" src="./img/grave1.png">
+                        <img id="grave-img" src="../resources/img/grave1.png">
                     </div>
                 </div>`
     }

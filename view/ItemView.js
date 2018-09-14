@@ -11,11 +11,11 @@ export class ItemView{
 
     render(){
         return `<div class="tabcontent ${this.controller.item.type}" id=${this.controller.item.id}>
-         <p><hr />${this.controller.item.name} 
+         <hr /><p>${this.controller.item.name} 
         LVL: ${this.controller.item.lvl}  
         ATK BONUS: ${this.controller.item.currentBonus}
         COST: ${this.controller.item.cost}
-        <button class="btn buy">buyme</button> <hr /></p></div>
+        <button class="btn buy">buyme</button></p></div>
         `
     }
     createElement() {

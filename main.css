@@ -1,10 +1,16 @@
 body {
-    background-image: url("img/background.png");
+    background-image: 
+            url("resources/img/bkgndgraveleft.png"),
+            url("resources/img/background.png");
+    
     background-attachment:fixed;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    /* Scale the background image to be as large as possible */
-    background-size:cover;
+    background-size: 
+        31vh,
+        cover;
+    background-position:
+        bottom left,
+        center bottom;
 }
 
 span {
@@ -12,10 +18,9 @@ span {
     display:block;
 }
 
-span > img {
-    max-width: none;
-    min-width: none;
-    margin: -0.13em;
+img {
+    max-height: 20vh;
+    min-height: 20vh;    
 }
 
 .btn {
@@ -53,13 +58,26 @@ span > img {
     border-color: currentColor;
     background-color: white;
 }
+button:disabled,
+button[disabled]{
+    text-decoration: line-through;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 
 .site {
+     background-image: 
+     
+    background-position: 
+        left bottom;
+    background-repeat: no-repeat;
+    background-size: 31vh;
     display: grid;
-    min-height: 99vh;
-    max-height: 99vh;
-    min-width: 99vw;
-    max-width: 99vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1.7fr 1fr 20fr;
     grid-template-areas: 
@@ -67,6 +85,15 @@ span > img {
     "panel score"
     "panel board";
 }
+
+.hpBar {
+    border-radius: 20px;
+}
+.hpValue  {
+    border-radius: 20px;
+   background: linear-gradient(to bottom, #aa0616 0%,#b70f22 39%,#930518 59%,#93091c 71%,#910f25 100%);
+}
+
 .score {
     margin: auto;
     min-width: 30vw;
@@ -166,7 +193,6 @@ span > img {
 .tabcontent {
     color: white;
     display: none;
-    padding: 50px;
 }
 .panelContent {
     grid-area:  panelContent;
@@ -181,6 +207,7 @@ span > img {
 @media screen and (max-width: 1140px) {
     
     .site {
+        background-image:  none;
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 0.5fr 5fr 5fr;
         grid-template-areas: 
@@ -211,7 +238,7 @@ span > img {
         ". grave ." ;
     }
     
-    span > img {
+    img {
         align-self: center;
         max-width: 30vh;
         margin-bottom:-1vh;
